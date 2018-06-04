@@ -1,22 +1,67 @@
-var firstname = document.querySelector('.firstname')
-var language = document.querySelector('.language')
-var LanguageBtn = document.querySelector('.LanguageBtn')
-var resetBtn = document.querySelector('.resetBtn')
-var display = document.querySelector('.display')
-var count = document.querySelector('.count')
+var NameElement = document.querySelector('.Name');
+  var greetBtnElement = document.querySelector('.greetBtn');
+  var greetingElement = document.querySelector('.greeting');
+  var greetingCounterElement = document.querySelector('.greetCounter');
+
+  var greeting = "";
+  var people = {};
 
 
-var greetingLang = factory() ;
+   var clickTheGreetButton = function(){
 
 
-var greetFunc =function(){
+          var checkedRadioBtn = document.querySelector("input[name='Language']:checked");
+    if (checkedRadioBtn){
+        var language = checkedRadioBtn.value;
 
-    var checkedRadioBtn = document.querySelector("input[name='language']:checked");
-  if (checkedRadioBtn){
-      var us = checkedRadioBtn.value
+    }
+       var Name = NameElement.value;
+       if(Name != ''){
 
-      count.innerHTML= greetingLang.funcCounter()
-}
+
+      if(people[Name] === undefined){
+
+      people[Name] = 0;
+        }
+
   }
+        if (language === 'English') {
+          greeting = "Hello, " + Name;
+        }
+        if(language === 'Chinese'){
+          greeting = "你好 " + Name;
+        }
+        if (language === 'Venda') {
+          greeting = "Ndaa " + Name }
+          console.log(people);
 
-  LanguageBtn.addEventListener('click', greetFunc)
+
+
+
+
+          greetingCounterElement.innerHTML = Object.entries(people).length ;
+
+          greetingElement.innerHTML = greeting;
+          NameElement.value = '';
+          // greetingCounterElement.innerHTML = Object.keys(people).length - 1;
+
+
+
+
+
+
+        }
+
+  // function greet(name){
+  //   if (name.length > 2){
+  //       return "Hello " +  name;
+  //   }
+  // }
+
+  greetBtnElement.addEventListener('click', clickTheGreetButton);
+
+
+
+
+  //console.log(firstNameElement);
+  //alert("yo!");

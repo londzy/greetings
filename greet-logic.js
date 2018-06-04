@@ -1,17 +1,39 @@
-function factory() {
+function Greeting(){
+  var people = {};
+  var greeting = "";
 
-var counter = 0 ;
+var greetZ = function(language,Name){
+
+  if(Name != ''){
 
 
-function funcCounter() {
-  return counter++ ;
+ if(people[Name] === undefined){
+
+ people[Name] = 0;
+   }
+
+}
+   if (language === 'English') {
+     greeting = "Hello, " + Name;
+   }
+   if(language === 'Chinese'){
+     greeting = "你好 " + Name;
+   }
+   if (language === 'Venda') {
+     greeting = "Ndaa " + Name }
 
 }
 
-return{
-funcCounter
+ function greetingZ(){
+
+  return greeting;
+
 }
 
 
+    return{
+           greetingZ,
+           greetZ
+       }
 
 }
