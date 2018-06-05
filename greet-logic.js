@@ -14,10 +14,10 @@ var greetZ = function(language,Name){
 
 }
    if (language === 'English') {
-     greeting = "Hello, " + Name;
+     greeting = "Hello " + Name;
    }
    if(language === 'Chinese'){
-     greeting = "你好 " + Name;
+     greeting = "你好(Nǐ hǎo) " + Name;
    }
    if (language === 'Venda') {
      greeting = "Ndaa " + Name }
