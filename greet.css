@@ -1,5 +1,14 @@
 
 body {
 
-     background-image: url("http://www.baltana.com/files/wallpapers-4/Water-Background-Desktop-Wallpaper-14609.jpg");
+     background-image: url("http://ak9.picdn.net/shutterstock/videos/14275469/thumb/2.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-size: 150%;
+    line-height: 1.6;
+    padding: 25px 50px 75px;
+}
+
+.buttons {
+display: block;
 }
