@@ -21,15 +21,18 @@ var greetZ = function(language,Name){
    }
    if (language === 'Venda') {
      greeting = "Ndaa " + Name }
-
+return greeting;
 }
 
  function greetingZ(){
 
   return greeting;
-
 }
 
+ function getCount() {
+   return Object.keys(people);
+
+ }
 
     return{
            greetingZ,

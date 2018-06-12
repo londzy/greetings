@@ -6,6 +6,12 @@ var resetElement = document.querySelector('.reset');
 
 var greeting = "";
 var people = {};
+if (localStorage.getItem("NamesGreeted")) {
+  people = JSON.parse(localStorage.getItem("NamesGreeted"))
+
+}
+
+var myfactory =Greeting();
 
 var clickTheGreetButton = function() {
 
@@ -14,32 +20,29 @@ var clickTheGreetButton = function() {
     var language = checkedRadioBtn.value;
 
   }
-  var Name = (NameElement.value).toUpperCase();
-  if (Name != '') {
+  var Name = NameElement.value;
+  var name =Name.toUpperCase();
+
+  if (name != '') {
 
 
-    if (people[Name] === undefined) {
+    if (people[name] === undefined) {
 
-      people[Name] = 0;
+      people[name] = 0;
+      localStorage.setItem('NamesGreeted',JSON.stringify(people));
     }
 
-  }
-  if (language === 'English') {
-    greeting = "Hello " + Name;
-  }
-  if (language === 'Chinese') {
-    greeting = "你好(Nǐ hǎo) " + Name;
-  }
-  if (language === 'Venda') {
-    greeting = "Ndaa " + Name
+
   }
   console.log(people);
 
   greetingCounterElement.innerHTML = Object.entries(people).length;
 
-  greetingElement.innerHTML = greeting;
-  NameElement.value = '';
+
+greetingElement.innerHTML = myfactory.greetZ(language, Name);
+NameElement.value="";
 }
+
 
 greetBtnElement.addEventListener('click', clickTheGreetButton);
 
