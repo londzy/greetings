@@ -30,13 +30,14 @@ return greeting;
 }
 
  function getCount() {
-   return Object.keys(people);
+   return Object.keys(people).length;
 
  }
 
     return{
            greetingZ,
-           greetZ
+           greetZ,
+           getCount
        }
 
 }

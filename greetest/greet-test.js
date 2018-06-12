@@ -1,25 +1,25 @@
-describe("greet", function(){
+describe("greet in different languges", function(){
 
 it("should greet Londiwe in English",function(){
       var hello = Greeting()
-      hello.greetingZ("Londiwe", 'English');
-      assert.equal('',hello.greetingZ('English' , 'Londiwe'))
+      hello.greetZ("Londiwe", 'English');
+      assert.equal('Hello Londiwe',hello.greetZ('English' , 'Londiwe'))
 
 });
 
 
 it("should greet Ayanda in Chinese",function(){
       var hello = Greeting()
-      hello.greetingZ("Ayanda", 'Chinese');
-      assert.equal('Ni hao Ayanda',hello.greetingZ('Chinese' , 'Ayanda'))
+      hello.greetZ("Ayanda", 'Chinese');
+      assert.equal('你好(Nǐ hǎo) Ayanda',hello.greetZ('Chinese' , 'Ayanda'))
 
 });
 
 
 it("should greet Mthobisi in Venda",function(){
       var hello = Greeting()
-      hello.greetingZ("Mthobisi", 'Venda');
-      assert.equal('Ndaa Mthobisi', hello.greetingZ('Venda' , 'Mthobisi'))
+      hello.greetZ("Mthobisi", 'Venda');
+      assert.equal('Ndaa Mthobisi', hello.greetZ('Venda' , 'Mthobisi'))
 
 });
 
@@ -30,38 +30,38 @@ describe("should return the number of people greeted", function() {
   it('should greet 3 people in different languges ', function() {
     var hello = Greeting();
 
-    hello.greetingZ("Londiwe", 'English');
-    hello.greetingZ("Ayanda", 'Chinese');
-    hello.greetingZ("Mthobisi", 'Venda');
+    hello.greetZ("Londiwe", 'English');
+    hello.greetZ("Ayanda", 'Chinese');
+    hello.greetZ("Mthobisi", 'Venda');
 
-    assert.equal(3, hello.greetingZ());
+    assert.equal(3, hello.getCount());
   });
 
-  it('should greet 6 people in different languges ', function() {
+  it('should greet 11 people in different languges ', function() {
     var hello = Greeting();
 
-    hello.greetingZ("Londiwe", 'English');
-    hello.greetingZ("Ayanda", 'Chinese');
-    hello.greetingZ("Mthobisi", 'Venda');
-    hello.greetingZ("Sabelo", 'Venda');
-    hello.greetingZ("Asanda", 'English');
-    hello.greetingZ("Mfundo", 'Chinese');
-    hello.greetingZ("Sihle", 'Venda');
-    hello.greetingZ("Nhlakanipho", 'English');
-    hello.greetingZ("Ngelosi", 'Chinese');
-    hello.greetingZ("Nozipho", 'English');
-    hello.greetingZ("Dumisani", 'Venda');
+    hello.greetZ('English', "Londiwe");
+    hello.greetZ('Chinese', "Ayanda");
+    hello.greetZ('Venda', "Mthobisi");
+    hello.greetZ('Venda', "Sabelo");
+    hello.greetZ('English', "Asanda");
+    hello.greetZ('Chinese', "Mfundo");
+    hello.greetZ( 'Venda', "Sihle");
+    hello.greetZ('English', "Nhlakanipho");
+    hello.greetZ('Chinese', "Ngelosi");
+    hello.greetZ( 'English', "Nozipho");
+    hello.greetZ('Venda', "Dumisani");
 
-    assert.equal(11, hello.greetingZ());
+    assert.equal(11, hello.getCount());
   });
 
   it('should return 1 when same name is typed twice ', function() {
       var hello = Greeting();
 
-      hello.greetingZ("Lehlohonolo", 'Chinese');
-      hello.greetingZ("Lehlohonolo", 'Venda');
+      hello.greetZ('Chinese', "Lehlohonolo");
+      hello.greetZ('Venda', "Lehlohonolo");
 
 
-      assert.equal(1, hello.greetingZ());
+      assert.equal(1, hello.getCount());
     })
 });
