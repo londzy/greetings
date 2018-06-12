@@ -37,6 +37,16 @@ describe("should return the number of people greeted", function() {
     assert.equal(3, hello.getCount());
   });
 
+  it('should return 1 when same name is typed twice ', function() {
+      var hello = Greeting();
+
+      hello.greetZ('Chinese', "Lehlohonolo");
+      hello.greetZ('Venda', "Lehlohonolo");
+
+
+      assert.equal(1, hello.getCount());
+    })
+
   it('should greet 11 people in different languges ', function() {
     var hello = Greeting();
 
@@ -55,13 +65,4 @@ describe("should return the number of people greeted", function() {
     assert.equal(11, hello.getCount());
   });
 
-  it('should return 1 when same name is typed twice ', function() {
-      var hello = Greeting();
-
-      hello.greetZ('Chinese', "Lehlohonolo");
-      hello.greetZ('Venda', "Lehlohonolo");
-
-
-      assert.equal(1, hello.getCount());
-    })
 });
