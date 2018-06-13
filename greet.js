@@ -11,7 +11,7 @@ if (localStorage.getItem("NamesGreeted")) {
 
 }
 
-var myfactory =Greeting();
+var myfactory = Greeting();
 
 var clickTheGreetButton = function() {
 
@@ -20,27 +20,31 @@ var clickTheGreetButton = function() {
     var language = checkedRadioBtn.value;
 
   }
+
   var Name = NameElement.value;
-  var name =Name.toUpperCase();
+  var name = Name.toUpperCase();
+
+  if (Name === "") {
+    greetingElement.innerHTML = 'Oops! seems like you did not enter name'
+    return;
+  }
+
+  if (!checkedRadioBtn) {
+    greetingElement.innerHTML = 'Please select a language'
+    return;
+  }
 
   if (name != '') {
-
-
     if (people[name] === undefined) {
-
       people[name] = 0;
-      localStorage.setItem('NamesGreeted',JSON.stringify(people));
+      localStorage.setItem('NamesGreeted', JSON.stringify(people));
     }
-
-
   }
   console.log(people);
 
   greetingCounterElement.innerHTML = Object.entries(people).length;
-
-
-greetingElement.innerHTML = myfactory.greetZ(language, Name);
-NameElement.value="";
+  greetingElement.innerHTML = myfactory.greetZ(language, Name);
+  // NameElement.value = "";
 }
 
 

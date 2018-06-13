@@ -12,6 +12,8 @@ var greetZ = function(language,Name){
  people[Name] = 0;
    }
 
+
+
 }
    if (language === 'English') {
      greeting = "Hello " + Name;
@@ -21,8 +23,12 @@ var greetZ = function(language,Name){
    }
    if (language === 'Venda') {
      greeting = "Ndaa " + Name }
+     if(language === ''){
+       greeting = "Oops! seems like you did not enter name";
+     }   
 return greeting;
 }
+
 
  function greetingZ(){
 
